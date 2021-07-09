@@ -17,9 +17,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
   </head>
   <body>
+  <%#Linking to our partial  %>
+  <%# Header element %>
+  <%# The following is how all embedded tags for ruby in html doc looks %>
+  <%# "=" means we want to output that on screen %>
+      <%= render 'home/header' %>
+  <%# Rails knows via render keyword , home/header is home/_header.html.erb %>
   <div class="container">
     <%= yield %>
-  </div>
+ </div>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
