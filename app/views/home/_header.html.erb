@@ -1,21 +1,24 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
 
-  <%# Using Link to embed method in ruby to make routes instead of anchor tags %>
-  <%= link_to "Friend App", root_path, class:"navbar-brand"  %>
+    <%# Using Link to embed method in ruby to make routes instead of anchor tags %>
+    <%= link_to "All my friends", friends_path, class:"navbar-brand"  %>
     <%# <a class="navbar-brand" href="/">Friends App</a> %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <%# <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li> %>
+        <%# <a class="nav-link active" aria-current="page" href="/">Home</a> %>
+
         <li class="nav-item">
-  <%= link_to "About Us ", home_about_path, class:"nav-link"  %>
-          <%# <a class="nav-link" href="home/about">About</a> %>
+          <%= link_to "Add a Friend", new_friend_path, class:"nav-link"  %>
         </li>
+        <li class="nav-item">
+          <%= link_to "About Us ", home_about_path, class:"nav-link"  %>
+        </li>
+        <%# <a class="nav-link" href="home/about">About</a> %>
         <%# <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
