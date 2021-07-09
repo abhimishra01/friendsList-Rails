@@ -23,6 +23,12 @@
   <%# "=" means we want to output that on screen %>
       <%= render 'home/header' %>
   <%# Rails knows via render keyword , home/header is home/_header.html.erb %>
+
+<% if notice %>
+ <%= render 'layouts/alerts' %> 
+ <%# Only Show Alert if Notice  %>
+<% end %>
+
   <div class="container">
     <%= yield %>
  </div>
