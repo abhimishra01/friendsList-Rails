@@ -1,24 +1,10 @@
-# README
+# Friendly 
+This is a Friends Listing Web Application, made for keeping records of all the friends of users logged in
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Tech Stack Used
+- Ruby On Rails
+- SQLite3 - for Dev
+- PostgreSQL - for Prod 
+- HTML CSS Javascript
+- Heroku deployment
