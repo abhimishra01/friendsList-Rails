@@ -4,7 +4,8 @@ This is a Friends Listing Web Application, made for keeping records of all the f
 
 # Tech Stack Used
 - Ruby On Rails
+- Bootstrap
+- HTML CSS Javascript
 - SQLite3 - for Dev
 - PostgreSQL - for Prod 
-- HTML CSS Javascript
 - Heroku deployment
