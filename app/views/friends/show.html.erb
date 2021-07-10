@@ -1,17 +1,19 @@
   <br/>
-<div class="jumbotron">
-  <h1 class="display-4">
+<div class="card">
+  <div class="card-header">
+  <h2 class="display-4">
     <p>
       <%= @friend.first_name %>
       <%= @friend.last_name %>
     </p>
-  </h1>
-  <hr class="my-4" />
-  <ul>
-    <li>
+  </h2>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
       <%= @friend.email%>
-
-    </li>
+    </h5>
+    <p class="card-text">
+    <ul>
     <li>
       <%= @friend.phone %>
 
@@ -24,4 +26,5 @@
   <hr class="my-4" />
   <%= link_to 'Edit', edit_friend_path(@friend),class:"btn btn-primary" %> 
   <%= link_to 'Back', friends_path, class:"btn btn-secondary" %>
+  </div>
 </div>
