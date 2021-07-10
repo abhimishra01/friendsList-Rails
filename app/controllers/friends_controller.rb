@@ -5,6 +5,9 @@ class FriendsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]  
   # if user's not authenticated, dont allow to do anything except index and show page
 
+  # before you run any of these functions see if correct_user is there only for pages edit, update and destory
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
   # GET /friends or /friends.json
   def index
     @friends = Friend.all
@@ -58,6 +61,11 @@ class FriendsController < ApplicationController
       format.html { redirect_to friends_url, notice: "Friend was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @friend = current_user.friends.find_by(id: params[:id])
+    redirect_to friends_path, notice: "Operation Unauthorized" if friend.nil?
   end
 
   private
