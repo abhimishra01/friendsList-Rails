@@ -19,16 +19,21 @@ class FriendsController < ApplicationController
 
   # GET /friends/new
   def new
-    @friend = Friend.new
+    # @friend = Friend.new
+    # Associating new friends creation with current user
+    @friend = current_user.friends.build
   end
-
+  
   # GET /friends/1/edit
   def edit
   end
-
+  
   # POST /friends or /friends.json
   def create
-    @friend = Friend.new(friend_params)
+    # @friend = Friend.new(friend_params)
+    # Associating new friends creation with current user
+    @friend = current_user.friends.build(friend_params)
+  
 
     respond_to do |format|
       if @friend.save
@@ -65,7 +70,7 @@ class FriendsController < ApplicationController
 
   def correct_user
     @friend = current_user.friends.find_by(id: params[:id])
-    redirect_to friends_path, notice: "Operation Unauthorized" if friend.nil?
+    redirect_to friends_path, notice: "Operation Unauthorized" if @friend.nil?
   end
 
   private
