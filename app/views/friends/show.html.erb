@@ -1,30 +1,32 @@
-  <br/>
-<div class="card">
-  <div class="card-header">
-  <h2 class="display-4">
-    <p>
-      <%= @friend.first_name %>
-      <%= @friend.last_name %>
-    </p>
-  </h2>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">
-      <%= @friend.email%>
-    </h5>
-    <p class="card-text">
-    <ul>
-    <li>
-      <%= @friend.phone %>
+  <br />
+  <div class="card">
+    <div class="card-header">
+      <h2 class="display-4">
+        <p>
+          <%= @friend.first_name %>
+          <%= @friend.last_name %>
+        </p>
+      </h2>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= @friend.email%>
+      </h5>
+      <p class="card-text">
+        <ul>
+          <li>
+            <%= @friend.phone %>
 
-    </li>
-    <li>
-      <%= @friend.twitter %>
-    </li>
-  </ul>
-  <%# <p class="lead">This is a jumbotron </p> %>
-  <hr class="my-4" />
-  <%= link_to 'Edit', edit_friend_path(@friend),class:"btn btn-primary" %> 
-  <%= link_to 'Back', friends_path, class:"btn btn-secondary" %>
+          </li>
+          <li>
+            <%= @friend.twitter %>
+          </li>
+        </ul>
+        <%# <p class="lead">This is a jumbotron </p> %>
+        <hr class="my-4" />
+        <%= link_to 'Edit', edit_friend_path(@friend),class:"btn btn-primary" %>
+        <%= link_to 'Destroy', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+
+        <%= link_to 'Back', friends_path, class:"btn btn-secondary" %>
+    </div>
   </div>
-</div>
