@@ -24,8 +24,13 @@
         <td><%= friend.twitter %></td>
         <td><%= friend.user_id %></td>
         <td><%= link_to 'Show', friend, class:"btn btn-primary" %></td>
+      <%# <% if friend.user ==  current_user%>
         <td><%= link_to 'Edit', edit_friend_path(friend), class:"btn btn-secondary" %></td>
         <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+        <%# <% else %>
+        <%# <td></td>
+        <td></td>
+      <% end %
       </tr>
     <% end %>
   </tbody>
