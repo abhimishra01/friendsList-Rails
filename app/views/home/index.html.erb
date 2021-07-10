@@ -1,3 +1,15 @@
-<h2> Lets Build Friend List App </h2>
-
-This is my first Rails Webapp
+<br />
+<div class="card">
+    <h4 class="card-header">This is a Friends Listing Web App</h4>
+    <div class="card-body">
+        <h5 class="card-title">Maintain all records of your friends!</h5>
+        <br/>
+        <% if !user_signed_in? %>
+        <p class="card-text">You can start by Logging In to the app</p>
+            <%= link_to "Log In ", user_session_path, class:"btn btn-primary"  %>
+        <% else %>
+            <%= link_to "My friends list", friends_path, class:"btn btn-primary"  %>
+            <%= link_to "Add a Friend", new_friend_path, class:"btn btn-secondary"  %>
+        <% end %>
+    </div>
+</div>

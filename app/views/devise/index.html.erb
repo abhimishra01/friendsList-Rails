@@ -1,0 +1,11 @@
+<br />
+<div class="card">
+    <h5 class="card-header">This is a Friends Listing Web App</h5>
+    <div class="card-body">
+        <h5 class="card-title">Maintain all records of your friends!</h5>
+        <p class="card-text">You can start by Logging In to the app</p>
+        <% if user_signed_in? %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <% end %>
+    </div>
+</div>
