@@ -1,41 +1,50 @@
 <%= form_with(model: friend) do |form| %>
-  <% if friend.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+<% if friend.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
 
-      <ul>
-        <% friend.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% friend.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field form-group">
-    <%# <%= form.label :first_name %>
-    <%= form.text_field :first_name, class: 'form-control', placeholder:"Oliver "%>
-  </div>
+<div class="field form-group">
+  <%# <%= form.label :first_name %>
+  <%= form.text_field :first_name, class: 'form-control', placeholder:"Oliver "%>
+</div>
 
-  <div class="field form-group">
-    <%= form.text_field :last_name, class: 'form-control', placeholder:"Queen" %>
-  </div>
+<div class="field form-group">
+  <%= form.text_field :last_name, class: 'form-control', placeholder:"Queen" %>
+</div>
 
-  <div class="field form-group">
-    <%= form.text_field :email, class: 'form-control',placeholder:"greenarrow@arrowverse.com" %>
-  </div>
+<div class="field form-group">
+  <%= form.text_field :email, class: 'form-control',placeholder:"greenarrow@arrowverse.com" %>
+</div>
 
-  <div class="field form-group">
-    <%# <%= form.label :phone %> 
-    <%# %>
-    <%= form.text_field :phone, class: 'form-control', placeholder:"1112222333444" %>
-  </div>
+<div class="field form-group">
+  <%# <%= form.label :phone %>
+  <%# %>
+  <%= form.text_field :phone, class: 'form-control', placeholder:"1112222333444" %>
+</div>
 
-  <div class="field form-group">
-    <%= form.text_field :twitter, class: 'form-control', placeholder: "@starcitymayor" %>
-  </div>
+<div class="field form-group">
+  <%= form.text_field :twitter, class: 'form-control', placeholder: "@starcitymayor" %>
+</div>
+<div class="field form-group">
 
-<br/>
-  <div class="actions">
-    <%= form.submit  class:"btn btn-primary" %>
-  </div>
+  <%# <%= current_user.inspect %>
+  <%# <%= current_user.id %>
+
+  <%# We need to prepopulate it with current user id and hide this field %>
+  <%= form.number_field :user_id,
+    id: :friend_user_id, # to stick this in friends table
+   class: 'form-control',value: current_user.id,type: :hidden %>
+</div>
+<br />
+<div class="actions">
+  <%= form.submit  class:"btn btn-primary" %>
+</div>
 <% end %>
